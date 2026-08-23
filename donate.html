@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate | Green Technology Club</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/Styles.css">
+</head>
+
+<body>
+
+    <header>
+      <nav class="navbar">
+        <div class="logo">Green Tech <img src="images/logo.jpg" alt="Green Tech Club logo" class="logo-img"></div>
+        <ul class="nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="technologies.html">Green Tech</a></li>
+          <li><a href="news.html">Green News</a></li>
+          <li><a href="activities.html">Activities</a></li>
+          <li><a href="reward.html">Reward</a></li>
+          <li><a href="donate.html" class="active">Donate</a></li>
+          <li><a id="navLoginBtn" href="auth.html">Login</a></li>
+          <li id="userGreeting" class="user-status" style="display: none;"></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="darkGreen">
+        <div class="currentPg">
+            <h1>Donate To Help Spread The Green</h1>
+        </div>
+        <div class="contentGrid">
+            <div class="content">
+                <h2>You can support our goals through donation. Our goals includes:</h2>
+                <ul>
+                    <li>Fund our solar panel and electric vehicle production</li>
+                    <li>Expand our reach to establish more renewable energy options</li>
+                    <li>Develop more sustainable technologies for future generation</li>
+                    <li>Help fund projects on research and development of smart cities</li>
+                </ul>
+                <p><br></p>
+                <h2>Make the world healthier now</h2>
+                <div class="card">
+                    <label>
+                        <input type="radio" name="cardChoice" value="VISA" hidden>
+                        <img src="images/VISA Logo.png" alt="VISA">
+                    </label>
+                    <label>
+                        <input type="radio" name="cardChoice" value="MasterCard" hidden>
+                        <img src="images/MasterCard.png" alt="MasterCard">
+                    </label>
+                </div>
+                <div class="moneySelect" id="donate">
+                    <button data-value="1">$1</button>
+                    <button data-value="5">$5</button>
+                    <button data-value="10">$10</button>
+                    <button data-value="50">$50</button>
+                    <button data-value="100">$100</button>
+                    <button data-value="500">$500</button>
+                </div>
+                <form class="sum" id="form">
+                    <label type="text">
+                        <b>Total Sum ($):</b>
+                        <input type="number" value="0" id="sum">
+                    </label>
+                    <button type="submit" class="payment" id="pay">Donate</button>
+                </form>
+            </div>
+            <div class="slideshow" style="margin-top: 6rem;">
+                <img id="display" src="images/GTech1.png" width="500px" height="300px" alt="Green Technology image 01">
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-container">
+
+        <div class="footer-col footer-brand">
+          <img src="images/utar.jpg" alt="UTAR Logo" class="footer-logo">
+          <p>Green Tech &<br>Science Society</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="activities.html">Activities</a></li>
+            <li><a href="news.html">Green News</a></li>
+            <li><a href="reward.html">Green Rewards</a></li>
+            <li><a href="donate.html">Donate</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="contact-item">
+            <span>📧</span>
+            <p>contact@greentechsociety.org</p>
+          </div>
+          <div class="contact-item">
+            <span>📞</span>
+            <p>+6012 345-6789</p>
+          </div>
+          <div class="contact-item">
+            <span>📍</span>
+            <p>Jalan Universiti, Bandar Barat,<br>31900 Kampar, Perak, Malaysia</p>
+          </div>
+
+          <div class="social-links">
+            <h4>Follow Us</h4>
+            <ul>
+              <li><a href="#">YouTube</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Facebook</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Green Technology Club. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <script src="js/PreferenceMode.JS"></script>
+    <script>
+    
+        const images = "images/GTech";
+        let curIndex = 0;
+        var source = document.getElementById("display");
+        setInterval(function () {
+            curIndex = (curIndex + 1) % 4;
+            if (curIndex == 0) {
+                curIndex = 1;
+            }
+            source.src = images + curIndex + ".png";
+        }, 3000);
+
+        document.getElementById("sum").addEventListener("blur", function () {
+            if (this.value.trim() == '') {
+                this.value = "0";
+            }
+        })
+        document.getElementById("form").addEventListener("submit", function (event) {
+            event.preventDefault();
+            var total = document.getElementById("sum").value;
+            if (total > 0) {
+                var message = alert("You have Donated: " + total +
+                    "$. \nThank You for your Generosity!!");
+            }
+        })
+        document.getElementById("donate").addEventListener("click", function (event) {
+            if (event.target.tagName == "BUTTON") {
+                var total = parseFloat(document.getElementById("sum").value);
+                total += parseInt(event.target.dataset.value);
+                document.getElementById("sum").value = total;
+            }
+        })
+    </script>
+    <script src="js/auth-status.js"></script>
+</body>
+
+</html>

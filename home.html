@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Green Technology Club</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+    body{
+        background-color:rgb(33, 112, 102);
+        margin:0;
+    }
+    *{
+        box-sizing: border-box;
+    }
+    /*------------------------------------*/
+    
+    /*
+    header{
+        height:8vh;
+        width:100vw;
+        display:flex;
+        background-color:rgb(15, 52, 47);
+    }
+    #logo{ 
+        height:8vh; 
+        width:16vw;
+        background-color:rgb(15, 52, 47);
+        display:flex;
+        align-items: center;
+        gap:12px;
+        padding-left:2vw;
+        padding-right:2vw;
+    }
+
+    #logo:hover{
+            cursor:pointer;
+
+    }
+
+    #logo img{
+        width:4vw;
+        height:7vh;
+    }
+
+    nav{
+        padding-right:2vw;
+        height:8vh;
+        width:82vw;
+        display:flex;
+        justify-content:space-between;
+        align-items: center;
+    }
+
+
+    nav a{
+        text-decoration: none;
+        background-color:rgb(15, 52, 47);
+        font-family: Arial, sans-serif;
+        color:white;font-width: 10px;
+        font-size:25px;
+    }
+
+    nav a:hover{
+        border-bottom:5px solid rgb(100, 124, 40);
+        cursor:pointer
+        
+    }
+        */
+
+    .tech:hover{
+        width:23.5vw;
+        background-color:rgb(33, 112, 102);
+    }
+    .tech{
+        height:37vh;
+        width:22.5vw;
+        background-color:rgb(15, 52, 47);
+    }
+
+    #reward:hover{
+        cursor:pointer;
+    }
+
+    #heroKnowButton:hover{
+        cursor:pointer;
+
+    }
+
+    .text{
+        color:white;
+        font-size:22px;
+    }
+
+    #heroSection img{
+        height:90vh;
+        width:100vw;
+    }
+    #heroSection {
+        position: relative;
+    }
+    #heroSection button{
+     height:7vh;
+     width:12vw;
+     font-size:18px;
+     border-radius:10px;
+     padding:1vh;
+     margin-top:2vh;
+     color:white;
+     background-color:rgb(15, 52, 47)
+    }
+    
+    #heroSection .text{
+        padding-top:4vh;
+    }
+
+    .textTitle{
+        color:white;
+        font-width: 10px;
+        font-size:30px;
+    }
+
+    #clubName{
+        padding:1.5vh 0vw 1.5vh 4vw;
+        border-radius:10px;
+        border:solid
+
+    }
+
+    #heroContentContainer{
+    width:42vw;
+    height:auto;
+    position:absolute;
+    top:14vh;
+    left:6vw;
+    }
+
+    .reward{
+     height:28vh;
+     width:12vw;
+    }
+
+    .reward:hover{
+        cursor:pointer;
+
+    }
+
+    #reward3{
+        grid-column:1/3;
+        justify-self: center;
+    }
+
+    #rewardContainer{
+        border-radius:30px;
+        background-color:rgb(15, 52, 47);
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        column-gap: 3vw;
+        row-gap: 2vh;
+        width:32vw;
+        height:68vh;
+        padding:2vh 2vw 2vh 2vw;
+    }
+
+    #contentContainer{
+        height:60vh;
+        width:90vw;
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        gap:4vw;
+        padding:6vh 5vw 0vh 4vw;
+        margin-top:8vh;
+    }
+
+    #contentContainer:hover{
+        cursor:pointer;
+    }
+
+    .sectionLabel{
+        border-radius:30px;
+        background: linear-gradient(135deg, rgb(15, 52, 47), rgb(33, 112, 102));
+    }
+
+    #sectionLabel1{
+        padding:2vh 2vw 2vh 10vw;
+        margin:8vh 25vw 0 25vw;
+    }
+
+    #greenTech{
+     padding:2vh 8vw 2vh 17vw;
+     margin:12vh 25vw 0 25vw;
+    }
+
+    #contentSubContainer{
+        border-radius:30px;
+        background-color:rgb(15, 52, 47);
+        height:68vh;width:32vw;
+        padding:3vh 3vw 3vh 3vw;
+        margin-left:6vw;
+    }
+
+    #graph{
+        height: 62vh;
+        width:26vw;
+    }
+
+    #contentContainer{
+        display:flex;
+        gap:20vw;
+        align-items: center;
+        margin-left:3vw;
+    }
+
+    #whatsapp{
+        height:100px;
+        width:100px;
+        position:fixed;
+        left:92vw;
+        bottom:2vh;
+    }
+
+    #greenTechBrief img{
+        height:13vh;
+        width:13vw;
+    }
+
+    .greenTechContent{
+        margin:0 2vw 0 2vw;
+    }
+
+    .tech{
+        display:grid;
+        justify-items: center;
+        align-items:center;
+        grid-template-rows:1fr  1fr 2fr ;
+        border-right: solid black;
+        border-top:solid black;
+        border-bottom:solid black;
+        color:white;
+        font-size:17px;
+        padding: 1vh 1vw;
+    }
+
+    #nextPageKnowButton{
+        height:8vh;
+        width:12vw;
+        font-size:25px;
+        border-radius:10px;
+        padding:1vh;margin-top:3vh;margin-bottom:8vh;
+        color:white;
+        background-color:rgb(15, 52, 47);
+        position:relative;
+        left:45vw;
+    }
+
+    button:hover{
+        cursor:pointer;
+    }
+
+    /*----------------------------------------------------------------*/
+    </style>
+</head>
+<body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">Green Tech <img src="images/logo.jpg" alt="Green Tech Club logo" class="logo-img"></div>
+        <ul class="nav-links">
+          <li><a href="home.html" class="active">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="technologies.html">Green Tech</a></li>
+          <li><a href="news.html">Green News</a></li>
+          <li><a href="activities.html">Activities</a></li>
+          <li><a href="reward.html">Reward</a></li>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a id="navLoginBtn" href="auth.html">Login</a></li>
+          <li id="userGreeting" class="user-status" style="display: none;"></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="heroSection">
+        <img src="images/HeroSection.png">
+        <div id="heroContentContainer">
+        <div class="textTitle" id="clubName">UTAR GREEN TECH CLUB</div>
+        <div class="text">The Website that share everything about green tech such as electricity cars, smart city and renewable energy.</div>
+        <button id="heroKnowButton">Know more</button>
+        <div class="text">Join our club and activities to save the Earth !</div>
+        <button id="heroJoinButton">Join Club</button>
+        </div>
+    </div>
+
+   <div class="textTitle sectionLabel" id="sectionLabel1"> Join activities and redeem reward</div>
+   <div id="contentContainer">
+      <div id="contentSubContainer">
+        <image id="graph" src="images/1.png"></image>
+    </div>
+    <div id="rewardContainer">
+    <img class="reward" id="reward1" src="images/reward3.png">
+    <img class="reward" id="reward2" src="images/reward2.png">
+    <img class="reward" id="reward3" src="images/reward1.png">
+    </div>
+    </div>
+   </div>
+
+    <a id="whatsappLink" href="https://wa.me/60123456789?text=Hello%20I%20want%20to%20know%20more">
+        <img id="whatsapp" src="images/whatsapp1.png">
+    </a>
+    
+    <div class="textTitle sectionLabel" id="greenTech" >Green Technology</div>
+    <div id="greenTechBrief" style="display:flex;margin:6vh 0 0 5vw;">
+        <div class="tech">
+          <span>Recycled Materials</span>
+          <img src="images/Tech1.png">
+          <span class="greenTechContent">
+            Reuse and process waste materials to create new products, reducing waste and conserving natural resources.
+        </span>
+
+        </div>
+        <div class="tech">
+          <span>Renewable Energy</span>
+          <img src="images/Tech2 .png">
+          <span class="greenTechContent">
+            Uses natural sources such as sunlight, wind, and water to produce clean energy and reduce reliance on fossil fuels.
+        </span>
+        </div>
+
+        <div class="tech">
+          <span>Smart City</span>
+          <img src="images/Tech3.png">
+          <span class="greenTechContent">
+            Uses smart technologies and data to make cities more efficient, connected, sustainable, and environmentally friendly.
+        </span>
+          </div>
+
+       <div class="tech">
+          <span>Electric Vehicles</span>
+          <img src="images/Tech4.png">
+          <span class="greenTechContent">
+            Use electricity instead of traditional fossil fuels, helping to reduce carbon emissions and air pollution.
+          </span>
+       </div>
+    </div>
+        <button id="nextPageKnowButton">Know more</button>
+
+        <div id="cookiesForm" style="display:none;margin:0 0 0 2vw;color:white;background-color:rgb(44, 143, 130);width:40vw;height:29vh;padding:2vh 3vw 2vh 3vw;position:fixed;top:20vh;left:28.5vw;box-shadow: 0 4px 15px rgb(15, 52, 47);">
+            <div id="cookies">
+                <div style="padding-left:7vw;font-weight:bold;color:rgb(15, 52, 47);font-size:40px;">Cookies Concept</div>
+            <div style="padding:0.6vh 0 0 3vw;;font-size:30px;">This webisite use cookies to help you have better browsing experience</div>
+            <div style="position:relative;top:1.5vh;display:flex;justify-content: space-around;align-items: center;">
+                <button style="border-radius:30px;color:white;height:3.5vh;width:8vw;background-color:rgb(249, 72, 72)" id="denyCookies">Deny</button>
+                <button style="border-radius:30px;color:white;height:3.5vh;width:8vw;background-color:rgb(66, 237, 66);" id="acceptCookies">Accept</button>
+            </div>
+            </div>
+          
+            <div id="colorPreference" style="display:none;">
+                <div style="padding:3.5vh 0 0 1vw;;font-size:30px;position:relative;top:5vh;left:3vw;">You Prefer dark mode or light mode</div>
+                <div style="position:relative;top:8vh;display:flex;justify-content: space-around;align-items: center;">
+                    <button style="border-radius:30px;color:white;height:3.5vh;width:8vw;background-color:rgb(8, 4, 4)" id="dark">Dark</button>
+                <button style="border-radius:30px;color:white;height:3.5vh;width:8vw;background-color:rgb(44, 143, 130);" id="light">Light</button>
+                </div>
+                
+            </div>
+        </div>
+        <!---------------------------------------------------------------------------->
+        <footer class="footer">
+      <div class="footer-container">
+
+        <div class="footer-col footer-brand">
+          <img src="images/utar.jpg" alt="UTAR Logo" class="footer-logo">
+          <p>Green Tech &<br>Science Society</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="activities.html">Activities</a></li>
+            <li><a href="news.html">Green News</a></li>
+            <li><a href="reward.html">Green Rewards</a></li>
+            <li><a href="donate.html">Donate</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="contact-item">
+            <span>📧</span>
+            <p>contact@greentechsociety.org</p>
+          </div>
+          <div class="contact-item">
+            <span>📞</span>
+            <p>+6012 345-6789</p>
+          </div>
+          <div class="contact-item">
+            <span>📍</span>
+            <p>Jalan Universiti, Bandar Barat,<br>31900 Kampar, Perak, Malaysia</p>
+          </div>
+
+          <div class="social-links">
+            <h4>Follow Us</h4>
+            <ul>
+              <li><a href="#">YouTube</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Facebook</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Green Technology Club. All Rights Reserved.</p>
+      </div>
+    </footer>
+    </div>
+    <script src="js/PreferenceMode.JS"></script>
+    <script>
+        let username = window.sessionStorage.getItem('loggedInUser');
+        let consent = getCookie("consentCookies", username);
+
+        if (consent == "") {
+              document.getElementById("cookiesForm").style.display = "block";
+        } else {
+
+    document.getElementById("cookiesForm").style.display = "none";
+}
+         var index=1;
+        setInterval(function() {
+            document.getElementById("graph").src ="images/"+index+".png";
+            if(index==4){
+            index=1;
+        }
+        else{
+            index++;
+        }
+    }, 2500);
+
+    document.getElementById("reward1").addEventListener('click',jump1)
+    function jump1(){
+        window.location.href="reward.html#item5";
+    }
+      document.getElementById("reward2").addEventListener('click',jump2)
+    function jump2(){
+        window.location.href="reward.html#item1";
+    }
+      document.getElementById("reward3").addEventListener('click',jump3)
+    function jump3(){
+        window.location.href="reward.html#item4";
+    }
+
+    document.getElementById("heroKnowButton").addEventListener('click',jumpToGreenTech)
+    function jumpToGreenTech(){
+        window.location.href="#greenTech";
+    }
+
+    document.getElementById("denyCookies").addEventListener('click',function(){
+        document.getElementById("cookiesForm").style.display='none';
+        setCookie("consentCookies", username,"deny", 30);
+    })
+
+    document.getElementById("acceptCookies").addEventListener('click',function(){
+        document.getElementById("cookies").style.display='none';
+        document.getElementById("colorPreference").style.display='block';
+        setCookie("consentCookies", username,"consent", 30);
+})
+
+    document.getElementById("light").addEventListener("click", function() {
+
+    document.getElementById("cookiesForm").style.display = "none";
+    document.body.style.backgroundColor = "rgb(33, 112, 102)";
+
+    setCookie("theme", username,"light", 30);
+
+});
+
+     document.getElementById("dark").addEventListener("click", function() {
+
+    document.getElementById("cookiesForm").style.display = "none";
+    document.body.style.backgroundColor = "black";
+
+    setCookie("theme", username,"dark", 30);
+
+});
+
+function setCookie(cname, username, cvalue, days) {
+
+        let date = new Date();
+
+        date.setTime(
+            date.getTime() + (days * 24 * 60 * 60 * 1000)
+        );
+
+        document.cookie =
+            cname +"_"+username +"=" + cvalue +
+            ";expires=" + date.toUTCString() +
+            ";path=/";
+    }
+
+    document.getElementById("heroJoinButton").addEventListener("click",function(){
+           window.location.href="auth.html";
+    });
+
+    document.getElementById("nextPageKnowButton").addEventListener("click",function(){
+           window.location.href="technologies.html";
+    });
+
+    document.getElementById("contentSubContainer").addEventListener("click",function(){
+           window.location.href="activities.html";
+    });
+
+
+    </script>
+    <script src="js/auth-status.js"></script>
+</body>
+</html>

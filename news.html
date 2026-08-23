@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Green News | Green Technology Club</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">Green Tech <img src="images/logo.jpg" alt="Green Tech Club logo" class="logo-img"></div>
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="technologies.html">Green Tech</a></li>
+        <li><a href="news.html" class="active">Green News</a></li>
+        <li><a href="activities.html">Activities</a></li>
+        <li><a href="reward.html">Reward</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a id="navLoginBtn" href="auth.html">Login</a></li>
+        <li id="userGreeting" class="user-status" style="display: none;"></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-banner">
+    <h1>Green News</h1>
+    <p>Live headlines on green technology, pulled straight from the web</p>
+  </section>
+
+  <main class="news-container">
+    <div id="news-status" class="news-status">Loading the latest green technology news...</div>
+    <div id="news-grid" class="news-grid"></div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-col footer-brand">
+        <img src="images/utar.jpg" alt="UTAR Logo" class="footer-logo">
+        <p>Green Tech &<br>Science Society</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="activities.html">Activities</a></li>
+          <li><a href="news.html">Green News</a></li>
+          <li><a href="reward.html">Green Rewards</a></li>
+          <li><a href="donate.html">Donate</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="contact-item">
+          <span>📧</span>
+          <p>contact@greentechsociety.org</p>
+        </div>
+        <div class="contact-item">
+          <span>📞</span>
+          <p>+6012 345-6789</p>
+        </div>
+        <div class="contact-item">
+          <span>📍</span>
+          <p>Jalan Universiti, Bandar Barat,<br>31900 Kampar, Perak, Malaysia</p>
+        </div>
+
+        <div class="social-links">
+          <h4>Follow Us</h4>
+          <ul>
+            <li><a href="#">YouTube</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Green Technology Club. All Rights Reserved.</p>
+    </div>
+  </footer>
+  <script src="js/PreferenceMode.JS"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/news.js"></script>
+  <script src="js/auth-status.js"></script>
+
+</body>
+</html>
