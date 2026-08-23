@@ -16,7 +16,7 @@ function loadGreenNews(query) {
   $grid.empty();
 
   $.ajax({
-    url: "https://gnews.io/api/v4/search",
+    url: "https://corsproxy.io/?https://gnews.io/api/v4/search",
     method: "GET",
     dataType: "json",
     data: {
