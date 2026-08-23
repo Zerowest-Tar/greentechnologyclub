@@ -1,0 +1,283 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+.slideshow {
+    text-align: right;
+}
+
+.slideshow img {
+    border: 2px double white;
+    border-radius: 20px;
+    width: 35vw;
+}
+
+.cover {
+    margin-left: 2vw;
+}
+
+.darkGreen {
+    background: transparent;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.topMenu {
+    display: grid;
+    grid-template-columns: 200px auto auto auto auto auto auto auto auto;
+    padding: 0% 1%;
+    text-align: center;
+    align-items: center;
+    font-weight: 600;
+    border-bottom: 2px solid black;
+}
+
+.title {
+    display: grid;
+    grid-template-columns: 150px 50px;
+    font-size: 160%;
+    justify-items: center;
+    align-items: center;
+}
+
+.topMenu>div img {
+    width: 50px;
+}
+
+.topMenu a {
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease;
+}
+
+.topMenu a:hover {
+    text-decoration: none;
+    color: inherit;
+    transform: scale(1.2);
+}
+
+.currentPg {
+    background: linear-gradient(135deg, rgb(15, 52, 47), rgb(33, 112, 102));
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 0.5%;
+}
+
+.content {
+    padding: 1%;
+    margin-left: 1vw;
+}
+
+.contentGrid {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: auto;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 18% 18%;
+    grid-template-rows: auto;
+    text-align: center;
+    align-items: center;
+    padding: 1%;
+    gap: 1.5%;
+}
+
+.card label img {
+    width: 100%;
+    border: 4px solid black;
+    border-radius: 10px;
+}
+
+.moneySelect {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    gap: 8px;
+    width: 70%;
+    height: 20%;
+}
+
+.moneySelect button {
+    border: 2px solid black;
+    border-radius: 10px;
+    background: rgb(33, 112, 102);
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 2% 5%;
+}
+
+.moneySelect button:hover {
+    background: rgb(13, 92, 82);
+    color: white;
+    transition: background 0.2s ease;
+}
+
+.moneySelect button:active {
+    border: 2px double white;
+    background: rgb(93, 172, 162);
+    color: rgb(15, 52, 47);
+}
+
+.sum {
+    display: grid;
+    grid-template-columns: 60% 29%;
+    grid-template-rows: auto;
+    padding: 0.5% 0.5% 8% 0.5%;
+    width: 55%;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.sum label {
+    margin-left: auto;
+    text-align: center;
+}
+
+.payment {
+    border: 2px solid black;
+    border-radius: 10px;
+    background: rgb(33, 112, 102);
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    width: 100%;
+    height: 150%;
+    padding: 0.5%;
+}
+
+.payment:hover {
+    background: rgb(13, 92, 82);
+    color: white;
+    transition: background 0.2s ease;
+}
+
+.payment:active {
+    border: 2px double white;
+    background: rgb(93, 172, 162);
+    color: rgb(15, 52, 47);
+}
+
+h1 {
+    margin: 0%;
+    font-weight: 400;
+}
+
+h2 {
+    margin: 0%;
+    font-size: 120%;
+    font-weight: 600;
+    padding: 0.5%
+}
+
+input {
+    background: rgb(13, 92, 82);
+    color: white;
+    border-radius: 10px;
+    border: 2px solid black;
+    width: 40%;
+
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+input[type="radio"]:checked+img {
+    border: 4px solid rgb(93, 172, 162);
+    border-radius: 10px;
+}
+
+p {
+    margin: 0% 2%;
+    font-size: 100%;
+    font-weight: 400;
+}
+
+ul {
+    margin: 0%;
+    padding-left: 3rem;
+}
+
+@media (max-width: 850px) {
+    .layout {
+        display: grid;
+        grid-template-columns: minmax(80px, 130px) auto;
+        grid-template-rows: 100%;
+    }
+
+    .layout> :first-child {
+        border-right: 2px solid black;
+    }
+
+    .slideshow {
+        position: relative;
+        text-align: center;
+        right: 0.5vw;
+        top: 0vw;
+    }
+
+    .slideshow img {
+        border: 2px double white;
+        border-radius: 20px;
+        width: 60vw;
+        height: 50vw;
+    }
+
+    .topMenu {
+        display: grid;
+        grid-template-columns: auto;
+        border-bottom: none;
+    }
+
+    .topMenu a {
+        padding: 10% 0%;
+    }
+
+    .title {
+        display: grid;
+        grid-template-columns: auto;
+        font-size: 160%;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .topMenu>div img {
+        width: 50px;
+    }
+
+    .contentGrid {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .card {
+        display: grid;
+        grid-template-columns: 25% 25%;
+        gap: 5%;
+    }
+
+    .moneySelect {
+        width: 100%;
+    }
+
+    .sum {
+        width: 80%;
+    }
+
+    .sum input {
+        width: 50%;
+    }
+}

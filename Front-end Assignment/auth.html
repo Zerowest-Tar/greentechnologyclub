@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Tech & Science Society - Member Portal</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Reset & Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: rgb(15, 52, 47);
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Light Green Title Banner Header */
+    .page-title-banner {
+      background-color: rgb(33, 112, 102);
+      text-align: center;
+      padding: 20px 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .page-title-banner h1 {
+      font-size: 32px;
+      color: #ffffff;
+      margin: 0;
+    }
+
+    /* Auth Container Panel */
+    .auth-container {
+      max-width: 420px;
+      width: 90%;
+      margin: 50px auto;
+      background-color: rgb(15, 52, 47);
+      border: 2px solid rgb(33, 112, 102);
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Tab Controls */
+    .tab-buttons {
+      display: flex;
+      margin-bottom: 25px;
+      border-bottom: 1px solid rgb(33, 112, 102);
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: 10px;
+      background: none;
+      border: none;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .tab-btn.active {
+      border-bottom: 3px solid #4ed991;
+      color: #4ed991;
+    }
+
+    /* Form Fields */
+    .auth-form {
+      display: none;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .auth-form.active {
+      display: flex;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .form-group label {
+      font-size: 14px;
+    }
+
+    .form-group input {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid rgb(33, 112, 102);
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      outline: none;
+    }
+
+    .form-group input:focus {
+      border-color: #4ed991;
+    }
+
+    /* Error Message Box */
+    .error-message {
+      color: #ff6b6b;
+      background-color: rgba(255, 107, 107, 0.1);
+      border: 1px solid #ff6b6b;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 13px;
+      display: none;
+      text-align: center;
+    }
+
+    .btn-submit {
+      background-color: rgb(33, 112, 102);
+      color: #ffffff;
+      border: none;
+      padding: 12px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+    }
+
+    .btn-submit:hover {
+      background-color: #4ed991;
+      color: rgb(15, 52, 47);
+    }
+
+    /* Mobile Responsiveness */
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Green Tech <img src="images/logo.jpg" alt="Green Tech Club logo" class="logo-img"></div>
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="technologies.html">Green Tech</a></li>
+        <li><a href="news.html">Green News</a></li>
+        <li><a href="activities.html">Activities</a></li>
+        <li><a href="reward.html">Reward</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="auth.html" class="active">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Page Header Title Banner -->
+  <div class="page-title-banner">
+    <h1>Member Access Portal</h1>
+  </div>
+
+  <!-- Authentication Panel -->
+  <main class="auth-container">
+    <div class="tab-buttons">
+      <button class="tab-btn active" id="loginTab" onclick="switchTab('login')">Login</button>
+      <button class="tab-btn" id="signupTab" onclick="switchTab('signup')">Member Sign Up</button>
+    </div>
+
+    <!-- Login Form -->
+    <form class="auth-form active" id="loginForm" onsubmit="handleLogin(event)">
+      <div id="loginError" class="error-message"></div>
+      <div class="form-group">
+        <label for="login-email">Email or Username</label>
+        <input type="text" id="login-email" required>
+      </div>
+      <div class="form-group">
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" required>
+      </div>
+      <button type="submit" class="btn-submit">Log In</button>
+    </form>
+
+    <!-- Member Sign Up Form -->
+    <form class="auth-form" id="signupForm" onsubmit="handleSignUp(event)">
+      <div id="signupError" class="error-message"></div>
+      <div class="form-group">
+        <label for="signup-name">Full Name</label>
+        <input type="text" id="signup-name" required>
+      </div>
+      <div class="form-group">
+        <label for="signup-email">Email Address</label>
+        <input type="email" id="signup-email" required>
+      </div>
+      <div class="form-group">
+        <label for="signup-password">Create Password</label>
+        <input type="password" id="signup-password" required>
+      </div>
+      <button type="submit" class="btn-submit">Sign Up & Continue</button>
+    </form>
+  </main>
+  
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-col footer-brand">
+        <img src="images/utar.jpg" alt="UTAR Logo" class="footer-logo">
+        <p>Green Tech &<br>Science Society</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="activities.html">Activities</a></li>
+          <li><a href="news.html">Green News</a></li>
+          <li><a href="reward.html">Green Rewards</a></li>
+          <li><a href="donate.html">Donate</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="contact-item">
+          <span>📧</span>
+          <p>contact@greentechsociety.org</p>
+        </div>
+        <div class="contact-item">
+          <span>📞</span>
+          <p>+6012 345-6789</p>
+        </div>
+        <div class="contact-item">
+          <span>📍</span>
+          <p>Jalan Universiti, Bandar Barat,<br>31900 Kampar, Perak, Malaysia</p>
+        </div>
+
+        <div class="social-links">
+          <h4>Follow Us</h4>
+          <ul>
+            <li><a href="#">YouTube</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Green Technology Club. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript Logic -->
+  <script>
+    function switchTab(mode) {
+      const loginTab = document.getElementById('loginTab');
+      const signupTab = document.getElementById('signupTab');
+      const loginForm = document.getElementById('loginForm');
+      const signupForm = document.getElementById('signupForm');
+      
+      // Clear error messages on tab switch
+      document.getElementById('loginError').style.display = 'none';
+      document.getElementById('signupError').style.display = 'none';
+
+      if (mode === 'login') {
+        loginTab.classList.add('active');
+        signupTab.classList.remove('active');
+        loginForm.classList.add('active');
+        signupForm.classList.remove('active');
+      } else {
+        signupTab.classList.add('active');
+        loginTab.classList.remove('active');
+        signupForm.classList.add('active');
+        loginForm.classList.remove('active');
+      }
+    }
+
+    // Sign Up Logic: Save User Credentials Array into LocalStorage
+    function handleSignUp(event) {
+      event.preventDefault();
+      
+      const name = document.getElementById('signup-name').value.trim();
+      const email = document.getElementById('signup-email').value.trim().toLowerCase();
+      const password = document.getElementById('signup-password').value;
+      const signupError = document.getElementById('signupError');
+
+      // Retrieve registered accounts or set empty array
+      let registeredUsers = JSON.parse(localStorage.getItem('registeredUsers')) || [];
+
+      // Check if user email already exists
+      const userExists = registeredUsers.some(user => user.email === email);
+      if (userExists) {
+        signupError.innerText = "An account with this email already exists. Please login.";
+        signupError.style.display = 'block';
+        return;
+      }
+
+      // Store user info and password
+      const newUser = { name, email, password };
+      registeredUsers.push(newUser);
+      localStorage.setItem('registeredUsers', JSON.stringify(registeredUsers));
+
+      // Set session active
+      localStorage.setItem('loggedInUser', name);
+      sessionStorage.setItem('loggedInUser', name);
+
+      alert(`Sign up successful! Welcome, ${name}.`);
+      window.location.href = "home.html";
+    }
+
+    // Login Logic: Validate Entered Email and Password
+    function handleLogin(event) {
+      event.preventDefault();
+
+      const inputAccount = document.getElementById('login-email').value.trim().toLowerCase();
+      const inputPassword = document.getElementById('login-password').value;
+      const loginError = document.getElementById('loginError');
+
+      let registeredUsers = JSON.parse(localStorage.getItem('registeredUsers')) || [];
+
+      // Find matching user profile
+      const foundUser = registeredUsers.find(
+        user => user.email === inputAccount || user.name.toLowerCase() === inputAccount
+      );
+
+      // Verify Credentials
+      if (!foundUser || foundUser.password !== inputPassword) {
+        loginError.innerText = "Login Failed: Invalid username/email or password.";
+        loginError.style.display = 'block';
+        return;
+      }
+
+      // Success Login
+      localStorage.setItem('loggedInUser', foundUser.name);
+      sessionStorage.setItem('loggedInUser', foundUser.name);
+      alert(`Login successful! Welcome back, ${foundUser.name}.`);
+      window.location.href = "home.html";
+    }
+  </script>
+
+</body>
