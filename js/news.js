@@ -16,7 +16,7 @@ function loadGreenNews(query) {
   $grid.empty();
 
   $.ajax({
-    url: "https://cors-anywhere.herokuapp.com/https://gnews.io/api/v4/search",
+    url: "https://gnews.io/api/v4/search",
     method: "GET",
     dataType: "json",
     data: {
